@@ -9,8 +9,14 @@ public class FibonacciSeries {
 		
 		System.out.println(fibonacciSeries(10));
 		
-		Stream.iterate(new int[] { 0, 1 }, t -> new int[] { t[1], t[0] + t[1] }).limit(10)
-				.forEach(arr -> System.out.println(arr[0] + " : " + arr[1]));
+		int prev=0, curr = 1;
+		for(int i=0;i<50;) {
+			i = prev + curr;
+			prev = curr;
+			curr = i;
+			System.out.println(i);
+			
+		}
 	}
 
 	private static String fibonacciSeries(int series) {
@@ -22,5 +28,21 @@ public class FibonacciSeries {
 			  .collect(Collectors.joining(","));
 		
 	}
+	
+	// A utility method that returns true if x is perfect square 
+    static  boolean isPerfectSquare(int x) 
+    { 
+        int s = (int) Math.sqrt(x); 
+        return (s*s == x); 
+    } 
+       
+    // Returns true if n is a Fibonacci Number, else false 
+    static boolean isFibonacci(int n) 
+    { 
+        // n is Fibonacci if one of 5*n*n + 4 or 5*n*n - 4 or both 
+        // is a perfect square 
+        return isPerfectSquare(5*n*n + 4) || 
+               isPerfectSquare(5*n*n - 4); 
+    } 
 
 }

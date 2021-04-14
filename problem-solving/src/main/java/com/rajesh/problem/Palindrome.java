@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 public class Palindrome {
 	
 	public static void main(String[] args) {
-		System.out.println(isPalindrome("Madam"));
+		System.out.println(isPalindrome("maddam"));
 	}
 
 	private static boolean isPalindrome(String text) {
